@@ -1,0 +1,9 @@
+name: 'My Composite Action'
+description: 'My composite action description'
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        echo "Hello World"
+    - run: |
+        echo "Goodbye World"
