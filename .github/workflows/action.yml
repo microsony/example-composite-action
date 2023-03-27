@@ -1,10 +1,22 @@
-name: "My Composite Action"
-description: "My composoite action description"
+name: My Composite Action
+description: "My composite GitHub Action in Bash"
+
+inputs:
+  my_input:
+    description: 'My input parameter'
+
+outputs:
+  my_output:
+    description: 'My output value'
 
 runs:
   using: 'composite'
   steps:
-    - run: |
-        echo "Hello World"
-    - run: |
-        echo "Goodbye World"
+    - name: My first step
+      run: |
+        echo "Hello, world!"
+        echo "My input parameter is ${{ inputs.my_input }}"
+        echo "::set-output name=my_output::my output value"
+    - name: My second step
+      run: |
+        echo "My output value is ${{ steps.step1.outputs.my_output }}"
