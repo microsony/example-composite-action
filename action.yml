@@ -1,7 +1,7 @@
 name: 'My Composite Action'
 description: 'My composite action description'
 runs:
-  shell: 'bash'
+  shell: bash
   using: 'composite'
   steps:
     - run: |
